@@ -189,3 +189,44 @@ footer {
   color: #fff;
 }
 
+.band-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.band-card {
+  flex-basis: 250px;
+  padding: 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.band-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.band-list {
+  display: flex;
+  justify-content: center;
+}
+
+/* ... existing CSS styles ... */
+
+/* New CSS styles for venue images */
+.venue-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

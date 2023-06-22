@@ -1,5 +1,31 @@
 // Code for bands.html
 // Add your JavaScript code specific to the bands.html page here
+// JavaScript for bands.html
+
+// Wait for the document to load
+document.addEventListener("DOMContentLoaded", function() {
+  // Get all the band cards
+  const bandCards = document.querySelectorAll(".band-card");
+
+  // Add event listeners to each band card
+  bandCards.forEach(function(card) {
+    card.addEventListener("click", function() {
+      // Toggle the active class when a band card is clicked
+      this.classList.toggle("active");
+    });
+  });
+});
+
+// script.js
+
+// Function to handle logo click event
+function handleLogoClick() {
+  window.location.href = "index.html"; // Replace "index.html" with the actual filename of your homepage
+}
+
+// Add event listener to logo element
+const logo = document.querySelector('.logo');
+logo.addEventListener('click', handleLogoClick);
 
 // Code for venues.html
 // Add your JavaScript code specific to the venues.html page here

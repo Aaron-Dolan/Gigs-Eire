@@ -3,25 +3,59 @@
 <head>
   <title>Gigs Eire - Register</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    .form-group label {
+      display: block;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      display: block;
+      margin: 0 auto;
+      width: 250px;
+      padding: 5px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .register-button {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Welcome to Gigs Eire</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="bands.html">Bands</a></li>
-        <li><a href="venues.html">Venues</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="register.html">Register</a></li>
-      </ul>
-    </nav>
+    <div class="header-container">
+      <h1 class="logo">Gigs Eire</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="bands.html">Bands</a></li>
+          <li><a href="venues.html">Venues</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html" class="active">Register</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
     <section id="registration-form">
-      <h2>Register</h2>
+      <h2>Create an Account</h2>
+      <p>Join the Gigs Eire community and gain access to exciting features:</p>
+      <ul>
+        <li>Discover and connect with talented bands and musicians</li>
+        <li>Explore upcoming events and performances in your area</li>
+        <li>Connect with venues to host and promote your own events</li>
+        <li>Receive personalized recommendations based on your music preferences</li>
+      </ul>
+      <p>Don't miss out on the vibrant music scene. Register now and start enjoying the benefits!</p>
       <form>
         <div class="form-group">
           <label for="registration-name">Name:</label>
@@ -35,7 +69,9 @@
           <label for="registration-password">Password:</label>
           <input type="password" id="registration-password" required>
         </div>
-        <button type="submit">Register</button>
+        <div class="register-button">
+          <button type="submit">Register</button>
+        </div>
       </form>
     </section>
   </main>

@@ -6,22 +6,43 @@
 </head>
 <body>
   <header>
-    <h1>Welcome to Gigs Eire</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="bands.html">Bands</a></li>
-        <li><a href="venues.html">Venues</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="register.html">Register</a></li>
-      </ul>
-    </nav>
+    <div class="header-container">
+      <h1 class="logo"><a href="index.html">Gigs Eire</a></h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="bands.html">Bands</a></li>
+          <li><a href="venues.html" class="active">Venues</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <h2>Venues</h2>
-    <p>This is the venues page content.</p>
+    <section class="venue-section">
+      <h2>Discover Venues</h2>
+      <div class="venue-list">
+        <div class="venue-card">
+          <img src="venue1.jpg" alt="Venue 1" class="venue-image">
+          <h3>Dolan's Pub, Limerick</h3>
+          <p>A popular Irish pub located in the heart of Limerick, featuring live music sessions and a cozy atmosphere.</p>
+        </div>
+        <div class="venue-card">
+          <img src="venue2.jpg" alt="Venue 2" class="venue-image">
+          <h3>The Celtic Corner, Dublin</h3>
+          <p>A traditional Irish pub in Dublin known for its lively music sessions and authentic Irish hospitality.</p>
+        </div>
+        <div class="venue-card">
+          <img src="venue3.jpg" alt="Venue 3" class="venue-image">
+          <h3>O'Connell's Music Hall, Galway</h3>
+          <p>A historic music hall in Galway city, hosting a variety of musical performances and cultural events.</p>
+        </div>
+        <!-- Add more venue cards here -->
+      </div>
+    </section>
   </main>
 
   <footer>
