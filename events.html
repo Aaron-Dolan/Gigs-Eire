@@ -4,32 +4,42 @@
   <title>Gigs Eire - Events</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <style>
-    nav {
+    body {
       display: flex;
       justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .event-section {
+      text-align: center;
     }
     
     .event-image {
       width: 200px; /* Adjust the width to your desired size */
       height: 200px; /* Adjust the height to your desired size */
     }
+    
+    .event-card {
+      margin-bottom: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .event-card h3 {
+      margin-top: 10px;
+    }
+    
+    .event-card p {
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="header-container">
-      <h1 class="logo">Gigs Eire</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="bands.html">Bands</a></li>
-          <li><a href="venues.html">Venues</a></li>
-          <li><a href="events.html" class="active">Events</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="register.html">Register</a></li>
-        </ul>
-      </nav>
-    </div>
+    <!-- Header content here -->
   </header>
 
   <main>
@@ -42,6 +52,7 @@
           <p>Date: June 30, 2024</p>
           <p>Venue: Celtic Pub</p>
           <p>A night of traditional Irish music featuring talented local musicians.</p>
+          <p>Tickets: €15</p>
         </div>
         <div class="event-card">
           <img src="event2.jpg" alt="Event 2" class="event-image">
@@ -49,6 +60,7 @@
           <p>Date: July 15, 2024</p>
           <p>Venue: Shamrock Stadium</p>
           <p>A high-energy concert featuring popular rock bands celebrating Irish heritage.</p>
+          <p>Tickets: €25</p>
         </div>
         <div class="event-card">
           <img src="event3.jpg" alt="Event 3" class="event-image">
@@ -56,6 +68,15 @@
           <p>Date: August 5, 2024</p>
           <p>Venue: The Folk House</p>
           <p>An intimate evening of folk and acoustic music performances by local artists.</p>
+          <p>Tickets: €10</p>
+        </div>
+        <div class="event-card">
+          <img src="event4.jpg" alt="Event 4" class="event-image">
+          <h3>Celtic Rock Festival</h3>
+          <p>Date: September 1-3, 2024</p>
+          <p>Venue: Green Meadows Park</p>
+          <p>A three-day festival showcasing the best of Celtic rock music with food and drinks.</p>
+          <p>Tickets: €40 (3-day pass)</p>
         </div>
         <!-- Add more event cards here -->
       </div>
@@ -63,7 +84,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2024 Gigs Eire. All rights reserved.</p>
+    <!-- Footer content here -->
   </footer>
 
   <script src="script.js"></script>
