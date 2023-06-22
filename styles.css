@@ -1,0 +1,191 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+h1, h2, h3 {
+  font-family: "Uncial Antiqua", cursive;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  font-family: "Candara", cursive;
+  font-size: 2.5rem;
+  color: #f2f2f2;
+}
+
+header {
+  background-color: #2ecc71;
+  padding: 20px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 15px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.login-register a {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.login-register a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 20px;
+}
+
+.hero-section {
+  background-color: #fff;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.featured-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.featured-band, .featured-venue {
+  flex-basis: 45%;
+  padding: 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.featured-band img, .featured-venue img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.featured-band h3, .featured-venue h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.band-description, .venue-description {
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2ecc71;
+  color: #fff;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #27ae60;
+}
+
+.testimonial-section {
+  background-color: #f2f2f2;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.testimonial-section h2 {
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.testimonial {
+  margin-bottom: 40px;
+}
+
+.testimonial img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.testimonial blockquote {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.testimonial cite {
+  font-style: italic;
+  color: #555;
+}
+
+footer {
+  background-color: #2ecc71;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+}
+
