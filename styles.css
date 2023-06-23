@@ -570,3 +570,74 @@ footer {
 .form-group .option input[type="radio"] {
   margin-left: 5px;
 }
+
+/* Example media query for smaller screens */
+@media (max-width: 768px) {
+  /* CSS rules specific to smaller screens */
+}
+
+.btn {
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ffcc00;
+    }
+
+    .featured-band,
+    .featured-venue {
+      transition: transform 0.3s ease;
+    }
+
+    .featured-band:hover,
+    .featured-venue:hover {
+      transform: scale(1.05);
+    }
+
+    .btn {
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ffcc00;
+      transform: scale(1.1);
+    }
+
+    .featured-band,
+    .featured-venue {
+      transition: transform 0.3s ease;
+    }
+
+    .featured-band:hover,
+    .featured-venue:hover {
+      transform: scale(1.05);
+    }
+
+    .testimonial {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .testimonial-section:hover .testimonial {
+      opacity: 1;
+    }
+
+    .about-section {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-animation {
+      animation: fade-in 0.5s ease forwards;
+    }
