@@ -34,14 +34,17 @@
       <h1 class="logo"><a href="index.html"><img src="gelogo.png.png" alt="Gigs Eire Logo"></a></h1>
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" class="active">Home</a></li>
           <li><a href="bands.html">Bands</a></li>
           <li><a href="venues.html">Venues</a></li>
           <li><a href="events.html">Events</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="register.html" class="active">Register</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
         </ul>
       </nav>
+      <div class="login-register">
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+      </div>
     </div>
   </header>
 
@@ -56,7 +59,7 @@
         <li>Receive personalized recommendations based on your music preferences</li>
       </ul>
       <p>Don't miss out on the vibrant music scene. Register now and start enjoying the benefits!</p>
-      <form>
+    <form>
         <div class="form-group">
           <label for="registration-name">Name:</label>
           <input type="text" id="registration-name" required>
@@ -69,9 +72,24 @@
           <label for="registration-password">Password:</label>
           <input type="password" id="registration-password" required>
         </div>
+        <div class="form-group">
+  <p class="option-label">Are you the band or the venue?</p>
+  <div class="center-options">
+    <label class="option">
+      <input type="radio" name="user-type" value="band">
+      <span class="option-text">Band</span>
+    </label>
+    <label class="option">
+      <input type="radio" name="user-type" value="venue">
+      <span class="option-text">Venue</span>
+    </label>
+  </div>
+</div>
         <div class="register-button">
           <button type="submit">Register</button>
         </div>
+
+
       </form>
     </section>
   </main>
