@@ -101,3 +101,79 @@ registrationForm.addEventListener("submit", (e) => {
   }
 });
 
+<script>
+  // Search bar functionality
+  const searchBar = document.getElementById('searchBar');
+  searchBar.addEventListener('input', searchEvents);
+
+  function searchEvents() {
+    const searchQuery = searchBar.value.toLowerCase();
+    const eventItems = document.querySelectorAll('.event-item');
+
+    eventItems.forEach((eventItem) => {
+      const eventName = eventItem.id.replace(/-/g, ' ').toLowerCase();
+      if (eventName.includes(searchQuery)) {
+        eventItem.style.display = 'flex';
+      } else {
+        eventItem.style.display = 'none';
+      }
+    });
+  }
+
+  // Filter bar functionality
+  const filterBar = document.getElementById('filterBar');
+  filterBar.addEventListener('change', filterEvents);
+
+  function filterEvents() {
+    const selectedCategory = filterBar.value;
+    const eventItems = document.querySelectorAll('.event-item');
+
+    eventItems.forEach((eventItem) => {
+      const eventCategories = eventItem.id.split('-');
+      if (selectedCategory === 'all' || eventCategories.includes(selectedCategory)) {
+        eventItem.style.display = 'flex';
+      } else {
+        eventItem.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+<script>
+  // Search bar functionality
+  const searchBar = document.getElementById('searchBar');
+  searchBar.addEventListener('input', searchBands);
+
+  function searchBands() {
+    const searchQuery = searchBar.value.toLowerCase();
+    const bandItems = document.querySelectorAll('.band-item');
+
+    bandItems.forEach((bandItem) => {
+      const bandName = bandItem.querySelector('h3').textContent.toLowerCase();
+      if (bandName.includes(searchQuery)) {
+        bandItem.style.display = 'flex';
+      } else {
+        bandItem.style.display = 'none';
+      }
+    });
+  }
+
+  // Filter bar functionality
+  const filterBar = document.getElementById('filterBar');
+  filterBar.addEventListener('change', filterBands);
+
+  function filterBands() {
+    const selectedCategory = filterBar.value;
+    const bandItems = document.querySelectorAll('.band-item');
+
+    bandItems.forEach((bandItem) => {
+      const bandCategories = bandItem.dataset.categories.split(',');
+      if (selectedCategory === 'all' || bandCategories.includes(selectedCategory)) {
+        bandItem.style.display = 'flex';
+      } else {
+        bandItem.style.display = 'none';
+      }
+    });
+  }
+</script>
+
