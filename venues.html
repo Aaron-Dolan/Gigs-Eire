@@ -11,7 +11,7 @@
       <nav>
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="bands.html">Bands</a></li>
+          <li><a href="bands.html">Artists</a></li>
           <li><a href="venues.html">Venues</a></li>
           <li><a href="events.html">Events</a></li>
           <li><a href="aboutus.html">About Us</a></li>
@@ -24,28 +24,90 @@
     </div>
   </header>
 
-  <main>
-    <section class="venue-section">
-      <h2>Discover Venues</h2>
-      <div class="venue-list">
-        <div class="venue-card">
-          <img src="venue1.jpg" alt="Venue 1" class="venue-image">
-          <h3>Dolan's Pub, Limerick</h3>
-          <p>A popular Irish pub located in the heart of Limerick, featuring live music sessions and a cozy atmosphere.</p>
+   <main>
+    <div class="container">
+      <div class="event-card">
+        <h2>Upcoming Events</h2>
+        <input type="text" id="searchBar" placeholder="Search events...">
+        <select id="filterBar">
+          <option value="all">All Counties</option>
+          <option value="antrim">Co. Antrim</option>
+          <option value="armagh">Co. Armagh</option>
+          <option value="carlow">Co. Carlow</option>
+          <option value="cavan">Co. Cavan</option>
+          <option value="clare">Co. Clare</option>
+          <option value="cork">Co. Cork</option>
+          <option value="derry">Co. Derry</option>
+          <option value="donegal">Co. Donegal</option>
+          <option value="down">Co. Down</option>
+          <option value="dublin">Co. Dublin</option>
+          <option value="fermanagh">Co. Fermanagh</option>
+          <option value="galway">Co. Galway</option>
+          <option value="kerry">Co. Kerry</option>
+          <option value="kildare">Co. Kildare</option>
+          <option value="kilkenny">Co. Kilkenny</option>
+          <option value="laois">Co. Laois</option>
+          <option value="leitrim">Co. Leitrim</option>
+          <option value="limerick">Co. Limerick</option>
+          <option value="longford">Co. Longford</option>
+          <option value="louth">Co. Louth</option>
+          <option value="mayo">Co. Mayo</option>
+          <option value="meath">Co. Meath</option>
+          <option value="monaghan">Co. Monaghan</option>
+          <option value="offaly">Co. Offaly</option>
+          <option value="roscommon">Co. Roscommon</option>
+          <option value="sligo">Co. Sligo</option>
+        </select>
+
+        <div class="event-list">
+          <div class="event-item" data-place="Dublin">
+            <img src="event1.jpg" alt="Event 1">
+            <div>
+              <h3>Traditional Irish Music Night</h3>
+              <p>Date: June 30, 2024</p>
+              <p>Venue: Celtic Pub</p>
+              <p>County: Dublin</p> <!-- Add the county here -->
+              <p>Address: 123 Fake Street, Dublin</p> <!-- Add the address here -->
+              <p>A night of traditional Irish music featuring talented local musicians.</p>
+            </div>
+          </div>
+          <div class="event-item" data-place="Galway">
+            <img src="event2.jpg" alt="Event 2">
+            <div>
+              <h3>Rockin' the Green</h3>
+              <p>Date: July 15, 2024</p>
+              <p>Venue: Shamrock Stadium</p>
+              <p>County: Galway</p> <!-- Add the county here -->
+              <p>Address: 456 Made-up Avenue, Galway</p> <!-- Add the address here -->
+              <p>A high-energy concert featuring popular rock bands celebrating Irish heritage.</p>
+            </div>
+          </div>
+          <div class="event-item" data-place="Limerick">
+            <img src="event3.jpg" alt="Event 3">
+            <div>
+              <h3>Folk and Acoustic Session</h3>
+              <p>Date: August 5, 2024</p>
+              <p>Venue: The Folk House</p>
+              <p>County: Limerick</p> <!-- Add the county here -->
+              <p>Address: 789 Fictional Road, Limerick</p> <!-- Add the address here -->
+              <p>An intimate evening of folk and acoustic music performances by local artists.</p>
+            </div>
+          </div>
+          <div class="event-item" data-place="Cork">
+            <img src="event4.jpg" alt="Event 4">
+            <div>
+              <h3>Celtic Rock Festival</h3>
+              <p>Date: September 1-3, 2024</p>
+              <p>Venue: Green Meadows Park</p>
+              <p>County: Cork</p> <!-- Add the county here -->
+              <p>Address: 321 Imaginary Lane, Cork</p> <!-- Add the address here -->
+              <p>A three-day festival showcasing the best of Celtic rock music with food and drinks.</p>
+            </div>
+          </div>
+          <!-- Add more event items here -->
         </div>
-        <div class="venue-card">
-          <img src="venue2.jpg" alt="Venue 2" class="venue-image">
-          <h3>The Celtic Corner, Dublin</h3>
-          <p>A traditional Irish pub in Dublin known for its lively music sessions and authentic Irish hospitality.</p>
-        </div>
-        <div class="venue-card">
-          <img src="venue3.jpg" alt="Venue 3" class="venue-image">
-          <h3>O'Connell's Music Hall, Galway</h3>
-          <p>A historic music hall in Galway city, hosting a variety of musical performances and cultural events.</p>
-        </div>
-        <!-- Add more venue cards here -->
       </div>
-    </section>
+    </div>
   </main>
 
   <footer>

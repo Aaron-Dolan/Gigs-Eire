@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>Gigs Eire - Bands</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
@@ -10,8 +11,8 @@
       <h1 class="logo"><a href="index.html"><img src="gelogo.png.png" alt="Gigs Eire Logo"></a></h1>
       <nav>
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="bands.html">Bands</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="bands.html" class="active">Artists</a></li>
           <li><a href="venues.html">Venues</a></li>
           <li><a href="events.html">Events</a></li>
           <li><a href="aboutus.html">About Us</a></li>
@@ -26,33 +27,70 @@
 
   <main>
     <section class="band-section">
-      <h2>Discover Irish Bands</h2>
-      <input type="text" id="searchBar" placeholder="Search bands...">
-  <select id="filterBar">
-    <option value="all">All Genres</option>
-<option value="rock">Rock</option>
-<option value="pop">Pop</option>
-<option value="jazz">Jazz</option>
-<option value="folk">Folk</option>
-<option value="hip-hop">Hip Hop</option>
-<option value="country">Country</option>
-<option value="blues">Blues</option>
-<option value="reggae">Reggae</option>
-<option value="electronic">Electronic</option>
-<option value="traditional">Traditional</option>
-  </select>
+      <h2>Discover Irish Bands and Solo Acts</h2>
+      <div class="search-filter-container">
+        <input type="text" id="searchBar" placeholder="Search bands...">
+        <select id="genreFilter">
+          <option value="all">All Genres</option>
+          <option value="blues">Blues</option>
+          <option value="country">Country</option>
+          <option value="electronic">Electronic</option>
+          <option value="folk">Folk</option>
+          <option value="hip-hop">Hip Hop</option>
+          <option value="jazz">Jazz</option>
+          <option value="pop">Pop</option>
+          <option value="reggae">Reggae</option>
+          <option value="rock">Rock</option>
+          <option value="traditional">Traditional</option>
+        </select>
+        <select id="placeFilter">
+          <option value="all">All Counties</option>
+          <option value="antrim">Co. Antrim</option>
+          <option value="armagh">Co. Armagh</option>
+          <option value="carlow">Co. Carlow</option>
+          <option value="cavan">Co. Cavan</option>
+          <option value="clare">Co. Clare</option>
+          <option value="cork">Co. Cork</option>
+          <option value="derry">Co. Derry</option>
+          <option value="donegal">Co. Donegal</option>
+          <option value="down">Co. Down</option>
+          <option value="dublin">Co. Dublin</option>
+          <option value="fermanagh">Co. Fermanagh</option>
+          <option value="galway">Co. Galway</option>
+          <option value="kerry">Co. Kerry</option>
+          <option value="kildare">Co. Kildare</option>
+          <option value="kilkenny">Co. Kilkenny</option>
+          <option value="laois">Co. Laois</option>
+          <option value="leitrim">Co. Leitrim</option>
+          <option value="limerick">Co. Limerick</option>
+          <option value="longford">Co. Longford</option>
+          <option value="louth">Co. Louth</option>
+          <option value="mayo">Co. Mayo</option>
+          <option value="meath">Co. Meath</option>
+          <option value="monaghan">Co. Monaghan</option>
+          <option value="offaly">Co. Offaly</option>
+          <option value="roscommon">Co. Roscommon</option>
+          <option value="sligo">Co. Sligo</option>
+          <option value="tipperary">Co. Tipperary</option>
+          <option value="tyrone">Co. Tyrone</option>
+          <option value="waterford">Co. Waterford</option>
+          <option value="westmeath">Co. Westmeath</option>
+          <option value="wexford">Co. Wexford</option>
+          <option value="wicklow">Co. Wicklow</option>
+        </select>
+      </div>
       <div class="band-list">
-        <div class="band-card">
+        <div class="band-card" data-genre="traditional" data-place="dublin">
           <img src="band1.jpg" alt="Band 1" class="band-image">
           <h3>The Lively Leprechauns</h3>
           <p>A lively Irish band known for their foot-stomping tunes and energetic performances.</p>
         </div>
-        <div class="band-card">
+        <div class="band-card" data-genre="traditional" data-place="galway">
           <img src="band2.jpg" alt="Band 2" class="band-image">
           <h3>The Candon Lads</h3>
           <p>An ensemble of talented traditional players, showcasing the rich traditions of Irish music.</p>
         </div>
-        <div class="band-card">
+        <div class="band-card" data-genre="traditional" data-place="limerick">
           <img src="band3.jpg" alt="Band 3" class="band-image">
           <h3>The Shamrock Muppets</h3>
           <p>A group with stunning harmonies, playing a mix of traditional and contemporary Irish tunes.</p>
@@ -67,5 +105,54 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // Get the search bar, genre filter, and place filter elements
+    const searchBar = document.getElementById('searchBar');
+    const genreFilter = document.getElementById('genreFilter');
+    const placeFilter = document.getElementById('placeFilter');
+
+    // Add event listener for input change
+    searchBar.addEventListener('input', function() {
+      filterBands();
+    });
+
+    // Add event listener for filter change
+    genreFilter.addEventListener('change', function() {
+      filterBands();
+    });
+
+    // Add event listener for place filter change
+    placeFilter.addEventListener('change', function() {
+      filterBands();
+    });
+
+    // Function to filter bands based on search, genre, and place criteria
+    function filterBands() {
+      const searchTerm = searchBar.value.toLowerCase();
+      const selectedGenre = genreFilter.value.toLowerCase();
+      const selectedPlace = placeFilter.value.toLowerCase();
+      const bandCards = document.getElementsByClassName('band-card');
+
+      // Iterate through the band cards
+      for (let i = 0; i < bandCards.length; i++) {
+        const bandCard = bandCards[i];
+        const bandName = bandCard.getElementsByTagName('h3')[0].textContent.toLowerCase();
+        const bandGenre = bandCard.getAttribute('data-genre');
+        const bandPlace = bandCard.getAttribute('data-place');
+
+        // Check if the band matches the search, genre, and place criteria
+        const matchSearch = bandName.includes(searchTerm);
+        const matchGenre = selectedGenre === 'all' || bandGenre === selectedGenre;
+        const matchPlace = selectedPlace === 'all' || bandPlace === selectedPlace;
+
+        // Show or hide the band card based on the criteria
+        if (matchSearch && matchGenre && matchPlace) {
+          bandCard.style.display = 'block';
+        } else {
+          bandCard.style.display = 'none';
+        }
+      }
+    }
+  </script>
 </body>
 </html>
