@@ -719,3 +719,82 @@ footer {
       border-radius: 5px;
       margin-bottom: 10px;
     }
+
+    .band-card p {
+      display: none;
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 10px;
+      width: 100%;
+      bottom: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .band-card:hover p {
+      display: block;
+      opacity: 1;
+    }
+
+        .band-card {
+      position: relative;
+      display: inline-block;
+      margin: 10px;
+    }
+
+    .band-image {
+      width: 200px;
+      height: 200px;
+    }
+
+    .band-info {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    .band-card:hover .band-info {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .band-card {
+      position: relative;
+      display: inline-block;
+      margin: 10px;
+    }
+
+    .band-image {
+      width: 200px;
+      height: 200px;
+    }
+
+    .band-info {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    .band-card:hover .band-info {
+      opacity: 1;
+      visibility: visible;
+    }
