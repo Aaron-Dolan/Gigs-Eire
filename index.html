@@ -8,24 +8,23 @@
 </head>
 <body>
   <header>
-  <div class="header-container">
-    <h1 class="logo"><a href="index.html"><img src="gelogo.png.png" alt="Gigs Eire Logo"></a></h1>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="bands.html">Artists</a></li>
-        <li><a href="venues.html">Venues</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="aboutus.html">About Us</a></li>
-      </ul>
-    </nav>
-    <div class="login-register">
-      <a href="login.html">Login</a>
-      <a href="register.html">Register</a>
+    <div class="header-container">
+      <h1 class="logo"><a href="index.html"><img src="gelogo.png.png" alt="Gigs Eire Logo"></a></h1>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="bands.html">Artists</a></li>
+          <li><a href="venues.html">Venues</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+      </nav>
+      <div class="login-register">
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+      </div>
     </div>
-  </div>
-</header>
-
+  </header>
 
   <main>
     <section class="hero-section">
@@ -39,14 +38,14 @@
 
     <section class="featured-section">
       <div class="featured-band">
-        <img src="band1.jpg" alt="Band 1">
-        <h3>The Lively Leprechauns</h3>
+        <img src="band1.jpg" alt="Band 1" class="band-image">
+        <h3 id="featured-band-name">The Lively Leprechauns</h3>
         <p class="band-description">Get ready for a foot-stomping, high-energy performance by The Lively Leprechauns. Join us for an unforgettable night of Irish music and craic!</p>
         <a href="bands.html" class="btn">Learn More</a>
       </div>
       <div class="featured-venue">
-        <img src="venue1.jpg" alt="Venue 1">
-        <h3>Dolan's Pub, Limerick</h3>
+        <img src="venue1.jpg" alt="Venue 1" class="venue-image">
+        <h3 id="featured-venue-name">Dolan's Pub, Limerick</h3>
         <p class="venue-description">Experience the authentic Irish atmosphere at The Celtic Corner. From traditional music sessions to hearty pub grub, it's a true taste of Ireland.</p>
         <a href="venues.html" class="btn">Learn More</a>
       </div>
@@ -76,5 +75,22 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // Define the band and venue lists
+    var bandList = document.querySelectorAll('.band-card');
+    var venueList = document.querySelectorAll('.venue-card');
+
+    // Get a random band and venue card
+    var randomBandCard = bandList[Math.floor(Math.random() * bandList.length)];
+    var randomVenueCard = venueList[Math.floor(Math.random() * venueList.length)];
+
+    // Extract the band and venue names from the selected cards
+    var randomBandName = randomBandCard.querySelector('h3').textContent;
+    var randomVenueName = randomVenueCard.querySelector('h3').textContent;
+
+    // Update the band and venue names in the HTML
+    document.getElementById('featured-band-name').textContent = randomBandName;
+    document.getElementById('featured-venue-name').textContent = randomVenueName;
+  </script>
 </body>
 </html>

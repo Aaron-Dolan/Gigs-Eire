@@ -175,5 +175,66 @@ registrationForm.addEventListener("submit", (e) => {
       }
     });
   }
+
+  document.getElementById('registration-form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the default form submission behavior
+
+  // Retrieve form input values
+  var name = document.getElementById('registration-name').value;
+  var email = document.getElementById('registration-email').value;
+  var password = document.getElementById('registration-password').value;
+  var userType = document.querySelector('input[name="user-type"]:checked').value;
+
+  // Perform input validation
+
+  // Make an API request to register the user
+  var userData = {
+    name: name,
+    email: email,
+    password: password,
+    userType: userType
+  };
+
+  // Perform an AJAX request or use fetch to send the registration data to your API endpoint
+  // Example using fetch:
+  fetch('/api/register', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(userData)
+  })
+    .then(function(response) {
+      if (response.ok) {
+        // Registration successful, redirect or show a success message
+        window.location.href = 'login.html'; // Redirect to the login page
+      } else {
+        // Registration failed, display an error message
+        throw new Error('Registration failed.');
+      }
+    })
+    .catch(function(error) {
+      // Handle any errors that occurred during the registration process
+      console.error(error);
+      // Display an error message to the user
+    });
+});
+
+
+// Define the band and venue lists
+var bandList = document.querySelectorAll('.band-card');
+var venueList = document.querySelectorAll('.venue-card');
+
+// Get a random band and venue card
+var randomBandCard = bandList[Math.floor(Math.random() * bandList.length)];
+var randomVenueCard = venueList[Math.floor(Math.random() * venueList.length)];
+
+// Extract the band and venue names from the selected cards
+var randomBandName = randomBandCard.querySelector('h3').textContent;
+var randomVenueName = randomVenueCard.querySelector('h3').textContent;
+
+// Update the band and venue names in the HTML
+document.getElementById('featured-band-name').textContent = randomBandName;
+document.getElementById('featured-venue-name').textContent = randomVenueName;
 </script>
 
