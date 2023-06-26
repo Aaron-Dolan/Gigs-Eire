@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>Gigs Eire - Artists</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+
 <body>
   <header>
     <div class="header-container">
@@ -81,47 +83,47 @@
       </div>
       <div class="band-list">
         <div class="band-card" data-genre="traditional" data-place="dublin">
-          <img src="band1.jpg" alt="Band 1" class="band-image">
+          <img src="assets/images/band1.jpg" alt="Band 1" class="band-image">
           <h3>The Lively Leprechauns</h3>
           <p class="band-info">Genre: Traditional<br>County: Dublin</p>
         </div>
         <div class="band-card" data-genre="traditional" data-place="galway">
-          <img src="band2.jpg" alt="Band 2" class="band-image">
+          <img src="assets/images/band2.jpg" alt="Band 2" class="band-image">
           <h3>The Candon Lads</h3>
           <p class="band-info">Genre: Traditional<br>County: Galway</p>
         </div>
         <div class="band-card" data-genre="traditional" data-place="limerick">
-          <img src="band3.jpg" alt="Band 3" class="band-image">
+          <img src="assets/images/band3.jpg" alt="Band 3" class="band-image">
           <h3>The Shamrock Muppets</h3>
           <p class="band-info">Genre: Traditional<br>County: Limerick</p>
         </div>
         <div class="band-card" data-genre="rock" data-place="dublin">
-          <img src="band4.jpg" alt="Band 4" class="band-image">
+          <img src="assets/images/band4.jpg" alt="Band 4" class="band-image">
           <h3>The Electric Souls</h3>
           <p class="band-info">Genre: Rock<br>County: Dublin</p>
         </div>
         <div class="band-card" data-genre="pop" data-place="cork">
-          <img src="band5.jpg" alt="Band 5" class="band-image">
+          <img src="assets/images/band5.jpg" alt="Band 5" class="band-image">
           <h3>The Pop Stars</h3>
           <p class="band-info">Genre: Pop<br>County: Cork</p>
         </div>
         <div class="band-card" data-genre="folk" data-place="galway">
-          <img src="band6.jpg" alt="Band 6" class="band-image">
+          <img src="assets/images/band6.jpg" alt="Band 6" class="band-image">
           <h3>The Folk Wanderers</h3>
           <p class="band-info">Genre: Folk<br>County: Galway</p>
         </div>
         <div class="band-card" data-genre="jazz" data-place="dublin">
-          <img src="band7.jpg" alt="Band 7" class="band-image">
+          <img src="assets/images/band7.jpg" alt="Band 7" class="band-image">
           <h3>The Jazz Cats</h3>
           <p class="band-info">Genre: Jazz<br>County: Dublin</p>
         </div>
         <div class="band-card" data-genre="hip-hop" data-place="limerick">
-          <img src="band8.jpg" alt="Band 8" class="band-image">
+          <img src="assets/images/band8.jpg" alt="Band 8" class="band-image">
           <h3>The Rhyme Masters</h3>
           <p class="band-info">Genre: Hip Hop<br>County: Limerick</p>
         </div>
         <div class="band-card" data-genre="blues" data-place="cork">
-          <img src="band9.jpg" alt="Band 9" class="band-image">
+          <img src="assets/images/band9.jpg" alt="Band 9" class="band-image">
           <h3>The Blues Brothers</h3>
           <p class="band-info">Genre: Blues<br>County: Cork</p>
         </div>
@@ -141,17 +143,17 @@
     const placeFilter = document.getElementById('placeFilter');
 
     // Add event listener for input change
-    searchBar.addEventListener('input', function() {
+    searchBar.addEventListener('input', function () {
       filterBands();
     });
 
     // Add event listener for filter change
-    genreFilter.addEventListener('change', function() {
+    genreFilter.addEventListener('change', function () {
       filterBands();
     });
 
     // Add event listener for place filter change
-    placeFilter.addEventListener('change', function() {
+    placeFilter.addEventListener('change', function () {
       filterBands();
     });
 
@@ -184,4 +186,5 @@
     }
   </script>
 </body>
+
 </html>
