@@ -798,3 +798,43 @@ footer {
       opacity: 1;
       visibility: visible;
     }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .event-card {
+      margin-bottom: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .event-card h2 {
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .event-item {
+      display: flex;
+      align-items: center;
+    }
+    
+    .event-item img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-right: 20px;
+    }
+    
+    .event-item h3 {
+      margin: 0;
+    }
+    
+    .event-item p {
+      margin-bottom: 10px;
+    }

@@ -19,8 +19,8 @@
     }
     
     .event-card h2 {
-      margin: 0 auto; /* Add this line to center the text */
-      text-align: center; /* Add this line to center the text */
+      margin: 0 auto;
+      text-align: center;
     }
     
     .event-item {
@@ -29,8 +29,8 @@
     }
     
     .event-item img {
-      width: 200px; /* Adjust the width to your desired size */
-      height: 200px; /* Adjust the height to your desired size */
+      width: 200px;
+      height: 200px;
       object-fit: cover;
       border-radius: 5px;
       margin-right: 20px;
@@ -101,7 +101,7 @@
         </select>
 
         <div class="event-list">
-          <div class="event-item" data-place="dublin">
+          <div class="event-item" data-place="dublin" data-date="2024-06-30">
             <img src="event1.jpg" alt="Event 1">
             <div>
               <h3>Traditional Irish Music Night</h3>
@@ -112,7 +112,7 @@
               <p>A night of traditional Irish music featuring talented local musicians.</p>
             </div>
           </div>
-          <div class="event-item" data-place="galway">
+          <div class="event-item" data-place="galway" data-date="2024-07-15">
             <img src="event2.jpg" alt="Event 2">
             <div>
               <h3>Rockin' the Green</h3>
@@ -123,7 +123,7 @@
               <p>A high-energy concert featuring popular rock bands celebrating Irish heritage.</p>
             </div>
           </div>
-          <div class="event-item" data-place="limerick">
+          <div class="event-item" data-place="limerick" data-date="2024-08-05">
             <img src="event3.jpg" alt="Event 3">
             <div>
               <h3>Folk and Acoustic Session</h3>
@@ -134,7 +134,7 @@
               <p>An intimate evening of folk and acoustic music performances by local artists.</p>
             </div>
           </div>
-          <div class="event-item" data-place="cork">
+          <div class="event-item" data-place="cork" data-date="2024-09-01">
             <img src="event4.jpg" alt="Event 4">
             <div>
               <h3>Celtic Rock Festival</h3>
@@ -156,41 +156,58 @@
   </footer>
 
   <script>
-  // Filter events by county
-  const filterBar = document.getElementById('filterBar');
-  const eventItems = document.querySelectorAll('.event-item');
+    // Convert the event items NodeList to an array for easier manipulation
+    const eventItems = Array.from(document.querySelectorAll('.event-item'));
 
-  filterBar.addEventListener('change', () => {
-    const selectedCounty = filterBar.value;
-
-    eventItems.forEach((item) => {
-      const dataPlace = item.getAttribute('data-place');
-
-      if (selectedCounty === 'all' || selectedCounty === dataPlace) {
-        item.style.display = 'flex';
-      } else {
-        item.style.display = 'none';
-      }
+    // Sort the event items based on the date data attribute
+    eventItems.sort((a, b) => {
+      const dateA = new Date(a.getAttribute('data-date'));
+      const dateB = new Date(b.getAttribute('data-date'));
+      return dateA - dateB;
     });
-  });
 
-  // Search events by keyword
-  const searchBar = document.getElementById('searchBar');
+    // Clear the current event list
+    const eventList = document.querySelector('.event-list');
+    eventList.innerHTML = '';
 
-  searchBar.addEventListener('input', () => {
-    const keyword = searchBar.value.toLowerCase();
-
+    // Add the sorted event items back to the event list
     eventItems.forEach((item) => {
-      const eventName = item.querySelector('h3').textContent.toLowerCase();
-
-      if (eventName.includes(keyword)) {
-        item.style.display = 'flex';
-      } else {
-        item.style.display = 'none';
-      }
+      eventList.appendChild(item);
     });
-  });
-</script>
 
+    // Filter events by county
+    const filterBar = document.getElementById('filterBar');
+
+    filterBar.addEventListener('change', () => {
+      const selectedCounty = filterBar.value;
+
+      eventItems.forEach((item) => {
+        const dataPlace = item.getAttribute('data-place');
+
+        if (selectedCounty === 'all' || selectedCounty === dataPlace) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+
+    // Search events by keyword
+    const searchBar = document.getElementById('searchBar');
+
+    searchBar.addEventListener('input', () => {
+      const keyword = searchBar.value.toLowerCase();
+
+      eventItems.forEach((item) => {
+        const eventName = item.querySelector('h3').textContent.toLowerCase();
+
+        if (eventName.includes(keyword)) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
