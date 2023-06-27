@@ -862,6 +862,38 @@ body {
 }
 
 /****************** Start: Navbar Styling*/
+/****** Notes
+* Need to remove active border from burger menu
+* Add background color???
+* Style Sign in and Create Account buttons
+*/
+header,
+.navbar {
+    background-color: #FFF9FB;
+}
 
+.navbar-brand {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #003E1F;
+}
+
+.navbar-toggler {
+    border: none;
+    color: #003E1F;
+}
+
+#navbarNav {
+    justify-content: flex-end;
+}
+
+.nav-item a {
+    color: #003E1F;
+}
+
+.navbar-nav {
+    align-items: flex-end;
+}
 
 /****************** End: Navbar Styling*/
